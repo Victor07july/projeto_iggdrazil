@@ -10,7 +10,7 @@
 
 ## Tecnologias :books:
 
-As seguintes ferramentas foram usadas na construção do projeto:
+As seguintes ferramentas foram utilizadas na construção do projeto:
 
 - Android Studio
 - Dart
