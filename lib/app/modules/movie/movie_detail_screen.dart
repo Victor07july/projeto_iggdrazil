@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:projeto_iggdrazil/app/core/tmdb/tmdb_api.dart';
+import 'package:projeto_iggdrazil/app/core/ui/todo_list_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MovieDetailScreen extends StatefulWidget {
@@ -21,7 +22,33 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
   void initState() {
     super.initState();
     _futureMovieDetail = MovieDetailScreen.movieDb.getMovieDetail(widget.movieId);
-    
+
+  }
+
+  void addToWishlist(BuildContext context, MovieDetail movieDetail) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Obter a lista de desejos atual
+    List<String> wishlist = prefs.getStringList('wishlist') ?? [];
+
+    // Verificar se o filme já está na lista de desejos
+    if (!wishlist.contains(movieDetail.id.toString())) {
+      // Adicionar o ID do filme à lista de desejos
+      wishlist.add(movieDetail.id.toString());
+
+      // Salvar a lista de desejos atualizada
+      prefs.setStringList('wishlist', wishlist);
+
+      // Exibir um snackbar de confirmação
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Filme adicionado à lista de desejos')),
+      );
+    } else {
+      // Exibir um snackbar informando que o filme já está na lista de desejos
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Filme já está na lista de desejos')),
+      );
+    }
   }
 
   @override
@@ -63,6 +90,14 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                           movieDetail.overview,
                           style: TextStyle(fontSize: 16),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            addToWishlist(context, movieDetail);
+                          },
+                          child: Text('Adicionar à Lista de Desejos'),
+                        )
+
+
                       ],
                     ),
                   ),

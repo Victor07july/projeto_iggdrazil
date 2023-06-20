@@ -89,16 +89,13 @@ class HomeDrawer extends StatelessWidget {
             title: Text('Alterar nome'),
           ),
           ListTile(
+            onTap: () =>  Navigator.of(context).pushNamed('/wishlist'),
+            title: Text('Lista de Desejos'),
+          ),
+          ListTile(
             onTap: () => context.read<AuthProvider>().logout(),
             title: Text('Sair'),
           ),
-          ListTile(
-            title: Text('Página Inicial'),
-          ),
-          ListTile(
-            onTap: () =>  Navigator.of(context).pushNamed('/wishlist'),
-            title: Text('Lista de Desejos'),
-          )
         ],
       ),
     );

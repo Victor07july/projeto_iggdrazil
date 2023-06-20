@@ -90,6 +90,7 @@ flutter:
      - family: TodoListIcons
        fonts:
          - asset: assets/fonts/TodoListIcons.ttf
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
