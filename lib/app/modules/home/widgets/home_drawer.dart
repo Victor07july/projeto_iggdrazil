@@ -96,8 +96,8 @@ class HomeDrawer extends StatelessWidget {
             title: Text('Página Inicial'),
           ),
           ListTile(
-            onTap: () =>  Navigator.of(context).pushNamed('/favorites'),
-            title: Text('Favoritos'),
+            onTap: () =>  Navigator.of(context).pushNamed('/wishlist'),
+            title: Text('Lista de Desejos'),
           )
         ],
       ),
