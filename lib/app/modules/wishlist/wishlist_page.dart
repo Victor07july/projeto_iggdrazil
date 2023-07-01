@@ -67,7 +67,7 @@ class _WishListPageState extends State<WishListPage> {
                   subtitle: Text(wishlistMovies[index].releaseDate),
                   // Adicione mais informações do filme se desejar
                   trailing: IconButton(
-                    icon: Icon(Icons.remove_circle),
+                    icon: Icon(Icons.close),
                     onPressed: () {
                       removeMovieFromWishlist(wishlistMovies[index].id.toString());
                     },

@@ -41,6 +41,8 @@ dependencies:
   flutter_overlay_loader: ^2.0.0
   google_sign_in: ^6.1.2
   shared_preferences: ^2.1.2
+  mockito: ^5.4.0
+  test: ^1.20.0
 
 
   # The following adds the Cupertino Icons font to your application.

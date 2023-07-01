@@ -130,7 +130,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center, // Centraliza os elementos horizontalmente
                             children: [
-                              // Text('Sua avaliação: '),
+                              Text('Sua avaliação: '),
                               SizedBox(width: 8.0),
                               _buildRatingStars(),
                             ],
